@@ -1,0 +1,141 @@
+/* ===== Search Modal ===== */
+.search-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(15,23,42,0.58);
+  backdrop-filter: blur(14px);
+  z-index: 9999;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 120px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.search-modal.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.search-modal-inner {
+  width: 100%;
+  max-width: 600px;
+  padding: 0 24px;
+}
+
+.search-modal form {
+  display: flex;
+  background: var(--bg);
+  border-radius: 20px;
+  box-shadow: var(--shadow-xl);
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.72);
+}
+
+.search-modal input {
+  flex: 1;
+  border: none;
+  padding: 18px 24px;
+  font-size: 18px;
+  background: transparent;
+  color: var(--text);
+  outline: none;
+  font-family: var(--font);
+}
+
+.search-modal input::placeholder { color: var(--text-tertiary); }
+
+.search-modal .search-submit {
+  padding: 0 24px;
+  border: none;
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background var(--transition);
+}
+
+.search-modal .search-submit:hover { background: var(--primary-dark); }
+
+.search-modal-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition);
+}
+
+.search-modal-close:hover { background: rgba(255,255,255,0.25); }
+
+/* ===== Search Form / Results ===== */
+.search-form {
+  display: flex;
+  width: 100%;
+  max-width: 560px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: var(--bg-card);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.search-form .search-field {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  padding: 12px 16px;
+  background: transparent;
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 15px;
+  outline: none;
+}
+
+.search-form .search-submit {
+  border: none;
+  padding: 0 20px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  color: #fff;
+  font-family: var(--font);
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.search-form .search-submit:hover {
+  background: var(--primary-dark);
+}
+
+.search-empty {
+  padding: 28px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: var(--bg-card);
+  box-shadow: var(--shadow-sm);
+}
+
+.search-empty p {
+  margin-bottom: 16px;
+  color: var(--text-secondary);
+}
+
+.search-highlight {
+  background: rgba(249,115,22,0.16);
+  color: #c2410c;
+  border-radius: 3px;
+  padding: 0 2px;
+}

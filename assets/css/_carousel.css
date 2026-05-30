@@ -1,0 +1,165 @@
+/* ===== Hero Carousel ===== */
+.hero-carousel {
+  position: relative;
+  margin: 0 auto;
+  max-width: var(--max-width);
+  padding: 24px 24px 0;
+  overflow: hidden;
+}
+
+.carousel-wrapper {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  background: #0f172a;
+  border: 1px solid rgba(255,255,255,0.72);
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
+}
+
+.carousel-slide { min-width: 100%; position: relative; }
+
+.carousel-slide a {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.carousel-slide a:hover img { transform: scale(1.05); }
+
+.carousel-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 120px 56px 42px;
+  background:
+    linear-gradient(90deg, rgba(8,15,32,0.88) 0%, rgba(8,15,32,0.5) 52%, rgba(8,15,32,0.12) 100%),
+    linear-gradient(0deg, rgba(0,0,0,0.7), transparent 58%);
+  color: #fff;
+}
+
+.carousel-cat {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(255,255,255,0.16);
+  border: 1px solid rgba(255,255,255,0.24);
+  backdrop-filter: blur(10px);
+  color: #fff;
+  padding: 5px 14px;
+  border-radius: var(--radius-full);
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  letter-spacing: 0;
+}
+
+.carousel-overlay h2 {
+  font-size: 34px;
+  font-weight: 800;
+  line-height: 1.22;
+  margin-bottom: 14px;
+  max-width: 720px;
+  letter-spacing: 0;
+}
+
+.carousel-overlay h2 a { color: #fff; }
+.carousel-overlay h2 a:hover { color: var(--primary-light); }
+
+.carousel-meta {
+  font-size: 13px;
+  color: rgba(255,255,255,0.78);
+}
+
+.carousel-meta span { margin-right: 16px; }
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 46px;
+  height: 46px;
+  border: none;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.9);
+  color: var(--text);
+  font-size: 22px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow);
+  transition: all var(--transition);
+  opacity: 0;
+  backdrop-filter: blur(10px);
+}
+
+.carousel-wrapper:hover .carousel-btn,
+.carousel-wrapper:focus-within .carousel-btn { opacity: 1; }
+
+.carousel-btn:hover {
+  background: var(--primary);
+  color: #fff;
+  transform: translateY(-50%) scale(1.05);
+}
+
+.carousel-prev { left: 20px; }
+.carousel-next { right: 20px; }
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 18px 0 0;
+}
+
+.carousel-dots button {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 0;
+  background: #cbd5e1;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.35s;
+}
+
+.carousel-dots button.active {
+  background: linear-gradient(90deg, var(--primary), var(--primary-light));
+  width: 30px;
+  border-radius: 999px;
+}
+
+/* ===== Sticky Badge (inline) ===== */
+.sticky-inline {
+  color: var(--primary);
+  font-weight: 700;
+  font-size: inherit;
+}
+
+.grid-item.sticky {
+  border-color: var(--primary);
+  border-style: solid;
+}
+
+.blog-post-card.sticky {
+  border-color: var(--primary);
+  border-style: solid;
+}
+
+/* (responsive rules moved to _mobile.css) */
